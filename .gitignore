@@ -1,0 +1,8 @@
+basic/hlt/__pycache__/networking.cpython-35.pyc
+basic/hlt/__pycache__/game_map.cpython-35.pyc
+basic/hlt/__pycache__/entity.cpython-35.pyc
+basic/hlt/__pycache__/constants.cpython-35.pyc
+basic/hlt/__pycache__/collision.cpython-35.pyc
+basic/hlt/__pycache__/__init__.cpython-35.pyc
+*.hlt
+mlbot/README.MD
