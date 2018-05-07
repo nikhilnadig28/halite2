@@ -1,5 +1,5 @@
 # halite2
-Our Halite 2 bot for DD2438 AIMA A3
+Our Halite 2 bot for DD2438 AIMA A4
 
 Remove the cache if it does interefre
 
