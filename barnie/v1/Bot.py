@@ -21,4 +21,3 @@ class Bot:
             # Get all features here
             # Pass them to the neural network
             # Get outputs
-
