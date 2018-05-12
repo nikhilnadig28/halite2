@@ -50,6 +50,12 @@ class Neural_Network(object):
     o = self.forward(X)
     self.backward(X, y, o)
 
+  def crossover(self, output_one, output_two):
+    o = np.dot(output_one, output_two)
+    return o.T
+
+
+
 #For Testing
 NN = Neural_Network()
 for i in range(1000): # trains the NN 1,000 times
