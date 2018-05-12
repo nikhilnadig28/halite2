@@ -27,3 +27,7 @@ mlbot/hlt/__pycache__/entity.cpython-35.pyc
 mlbot/hlt/__pycache__/constants.cpython-35.pyc
 mlbot/hlt/__pycache__/collision.cpython-35.pyc
 mlbot/hlt/__pycache__/__init__.cpython-35.pyc
+
+\.ipynb_checkpoints/
+
+*.ipynb
