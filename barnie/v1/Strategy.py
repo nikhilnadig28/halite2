@@ -4,7 +4,7 @@
 import numpy as np
 
 # Neural network parameters
-NN_HIDDEN_LAYERS = np.array(10, 10)
+NN_HIDDEN_LAYERS = np.array([10, 10])
 NUM_INPUTS = [7]
 NUM_OUTPUTS = [3]
 
