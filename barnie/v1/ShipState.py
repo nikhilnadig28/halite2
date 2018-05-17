@@ -5,10 +5,10 @@ from .Common import *
 
 
 
-class ShipFeatures:
-    def __init__(self, game_map, map_features, ship):
+class ShipState:
+    def __init__(self, game_map, game_features, ship):
         self.game_map = game_map
-        self.map_features = map_features
+        self.map_features = game_features
         self.ship = ship
         self.nearby_entities = np.array()
         self.values = np.array()
@@ -53,6 +53,12 @@ class ShipFeatures:
                                 and not self.nearby_entities[distance][0].is_owned()]
         enemy_ship_distances = pad_distances(enemy_ship_distances)
         return enemy_ship_distances[:MAX_SENSE_LIMIT]
+
+    def get_closest_enemy_ship(self):
+        closest_enemy_ship = [self.nearby_entities[distance][0] for distance in self.nearby_entities
+                              if isinstance(self.nearby_entities[distance][0], hlt.entity.Ship)
+                              and not self.nearby_entities[distance][0].is_owned()]
+
 
     def update_values(self):
         self.nearby_entities = self.game_map.nearby_nearby_entities()
