@@ -36,7 +36,9 @@ for num in range(5000):
             p4_pct = round(player_4_wins/(total_wins)*100.0, 2)
             print("Player 1 win: {}%; Player 2 win: {}%.".format(p1_pct, p2_pct))
 
-        cmd = 'halite.exe -d "360 240" ' + bot_1 + bot_2 + bot_3 + bot_4 +' >> match.results'
+        cmd = './halite -d "360 240" ' + bot_1 + bot_2 + bot_3 + bot_4 +' >> match.results'
+
+
         os.system(cmd)
 
         with open('match.results', 'r') as f:
@@ -140,4 +142,4 @@ for num in range(5000):
         time.sleep(2)
     except Exception as e:
         print(str(e))
-        time.sleep(1)
+        time.sleep(2)

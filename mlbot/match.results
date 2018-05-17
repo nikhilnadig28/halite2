@@ -1,0 +1,211 @@
+Game constants: all default
+MyBot1.py
+MyBot2.py
+MyBot3.py
+MyBot4.py
+Seed: 2993166433 Dimensions: 360x240
+Init Message sent to player 0.
+Init Message sent to player 1.
+Init Message sent to player 2.
+Init Message sent to player 3.
+Init Message received from player 0, sh: MyBot1.py: command not fou.
+Init Message received from player 2, sh: MyBot3.py: command not fou.
+Init Message received from player 1, sh: MyBot2.py: command not fou.
+Init Message received from player 3, sh: MyBot4.py: command not fou.
+Turn 1
+ERROR: Bot #1: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #3: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #0: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #2: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+Skipping replay (bot errored on first turn).
+Player #0, sh: MyBot1.py: command not fou, came in rank #2 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #1, sh: MyBot2.py: command not fou, came in rank #1 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #2, sh: MyBot3.py: command not fou, came in rank #4 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #3, sh: MyBot4.py: command not fou, came in rank #3 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Game constants: all default
+MyBot1.py
+MyBot2.py
+MyBot3.py
+MyBot4.py
+Seed: 2997247788 Dimensions: 360x240
+Init Message sent to player 0.
+Init Message sent to player 1.
+Init Message received from player 0, sh: MyBot1.py: command not fou.
+Init Message received from player 1, sh: MyBot2.py: command not fou.
+Init Message sent to player 2.
+Init Message received from player 2, sh: MyBot3.py: command not fou.
+Init Message sent to player 3.
+Init Message received from player 3, sh: MyBot4.py: command not fou.
+Turn 1
+ERROR: Bot #0: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #1: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #2: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #3: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+Skipping replay (bot errored on first turn).
+Player #0, sh: MyBot1.py: command not fou, came in rank #3 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #1, sh: MyBot2.py: command not fou, came in rank #4 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #2, sh: MyBot3.py: command not fou, came in rank #1 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #3, sh: MyBot4.py: command not fou, came in rank #2 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Game constants: all default
+MyBot1.py
+MyBot2.py
+MyBot3.py
+MyBot4.py
+Seed: 3001325305 Dimensions: 360x240
+Init Message sent to player 0.
+Init Message sent to player 1.
+Init Message sent to player 2.
+Init Message sent to player 3.
+Init Message received from player 1, sh: MyBot2.py: command not fou.
+Init Message received from player 0, sh: MyBot1.py: command not fou.
+Init Message received from player 2, sh: MyBot3.py: command not fou.
+Init Message received from player 3, sh: MyBot4.py: command not fou.
+Turn 1
+ERROR: Bot #0: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #1: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #3: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #2: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+Skipping replay (bot errored on first turn).
+Player #0, sh: MyBot1.py: command not fou, came in rank #3 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #1, sh: MyBot2.py: command not fou, came in rank #4 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #2, sh: MyBot3.py: command not fou, came in rank #1 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #3, sh: MyBot4.py: command not fou, came in rank #2 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Game constants: all default
+MyBot1.py
+MyBot2.py
+MyBot3.py
+MyBot4.py
+Seed: 3005395567 Dimensions: 360x240
+Init Message sent to player 0.
+Init Message sent to player 1.
+Init Message sent to player 2.
+Init Message received from player 0, sh: MyBot1.py: command not fou.
+Init Message sent to player 3.
+Init Message received from player 1, sh: MyBot2.py: command not fou.
+Init Message received from player 2, sh: MyBot3.py: command not fou.
+Init Message received from player 3, sh: MyBot4.py: command not fou.
+Turn 1
+ERROR: Bot #0: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #2: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #3: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #1: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+Skipping replay (bot errored on first turn).
+Player #0, sh: MyBot1.py: command not fou, came in rank #1 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #1, sh: MyBot2.py: command not fou, came in rank #2 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #2, sh: MyBot3.py: command not fou, came in rank #3 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #3, sh: MyBot4.py: command not fou, came in rank #4 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Game constants: all default
+MyBot1.py
+MyBot2.py
+MyBot3.py
+MyBot4.py
+Seed: 3009467326 Dimensions: 360x240
+Init Message sent to player 0.
+Init Message sent to player 2.
+Init Message sent to player 1.
+Init Message sent to player 3.
+Init Message received from player 1, sh: MyBot2.py: command not fou.
+Init Message received from player 0, sh: MyBot1.py: command not fou.
+Init Message received from player 2, sh: MyBot3.py: command not fou.
+Init Message received from player 3, sh: MyBot4.py: command not fou.
+Turn 1
+ERROR: Bot #3: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #0: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #2: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #1: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+Skipping replay (bot errored on first turn).
+Player #0, sh: MyBot1.py: command not fou, came in rank #1 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #1, sh: MyBot2.py: command not fou, came in rank #4 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #2, sh: MyBot3.py: command not fou, came in rank #3 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #3, sh: MyBot4.py: command not fou, came in rank #2 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Game constants: all default
+MyBot1.py
+MyBot2.py
+MyBot3.py
+MyBot4.py
+Seed: 406579269 Dimensions: 360x240
+Init Message sent to player 0.
+Init Message received from player 0, sh: MyBot1.py: command not fou.
+Init Message sent to player 1.
+Init Message received from player 1, sh: MyBot2.py: command not fou.
+Init Message sent to player 3.
+Init Message sent to player 2.
+Init Message received from player 3, sh: MyBot4.py: command not fou.
+Init Message received from player 2, sh: MyBot3.py: command not fou.
+Turn 1
+ERROR: Bot #0: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #2: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #3: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #1: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+Skipping replay (bot errored on first turn).
+Player #0, sh: MyBot1.py: command not fou, came in rank #4 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #1, sh: MyBot2.py: command not fou, came in rank #3 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #2, sh: MyBot3.py: command not fou, came in rank #2 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #3, sh: MyBot4.py: command not fou, came in rank #1 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Game constants: all default
+MyBot1.py
+MyBot2.py
+MyBot3.py
+MyBot4.py
+Seed: 410644111 Dimensions: 360x240
+Init Message sent to player 2.
+Init Message sent to player 1.
+Init Message received from player 2, sh: MyBot3.py: command not fou.
+Init Message received from player 1, sh: MyBot2.py: command not fou.
+Init Message sent to player 0.
+Init Message sent to player 3.
+Init Message received from player 0, sh: MyBot1.py: command not fou.
+Init Message received from player 3, sh: MyBot4.py: command not fou.
+Turn 1
+Game constants: all default
+MyBot1.py
+MyBot2.py
+MyBot3.py
+MyBot4.py
+Seed: 414585951 Dimensions: 360x240
+Init Message sent to player 0.
+Init Message sent to player 1.
+Init Message sent to player 2.
+Init Message received from player 0, sh: MyBot1.py: command not fou.
+Init Message sent to player 3.
+Init Message received from player 1, sh: MyBot2.py: command not fou.
+Init Message received from player 2, sh: MyBot3.py: command not fou.
+Init Message received from player 3, sh: MyBot4.py: command not fou.
+Turn 1
+ERROR: Bot #1: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #0: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #2: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+ERROR: Bot #3: Timeout reading commands for bot; select() result: 0 (max time: 2000 milliseconds).
+No input received from bot.
+Skipping replay (bot errored on first turn).
+Player #0, sh: MyBot1.py: command not fou, came in rank #2 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #1, sh: MyBot2.py: command not fou, came in rank #1 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #2, sh: MyBot3.py: command not fou, came in rank #4 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
+Player #3, sh: MyBot4.py: command not fou, came in rank #3 and was last alive on frame #0, producing 0 ships and dealing 0 damage!
