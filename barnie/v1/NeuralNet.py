@@ -50,11 +50,10 @@ class Neural_Network(object):
         o = self.forward(X)
         self.backward(X, y, o)
 
-    def crossover(self, weight_one, weight_two, split_index):
-        first_part = np.split(weight_one, [split_index + 1, len(weight_one)])
-        last_part = np.split(weight_two, [split_index + 1, len(weight_two)])
-        o = np.concatenate([first_part[0], last_part[1]])
-        return o
+  def crossover(self, weight_one, weight_two, split_index):
+    first_part = np.split(weight_one, [split_index + 1, len(weight_one)])
+    last_part = np.split(weight_two, [split_index + 1, len(weight_two)])
+    return np.concatenate([first_part[0], last_part[1]])
 
     def set_weights(self, weights):
         pass
