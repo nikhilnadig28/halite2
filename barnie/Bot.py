@@ -17,20 +17,20 @@ logging.info("Starting Barnie!")
 
 
 class Bot:
-    def _init_(self):
+    def __init__(self):
         current_directory = os.path.dirname(os.path.abspath(__file__))
         #self._name = name
 
         # Neural Network
-        self.nn_layer = np.array(NUM_INPUTS, 10, NUM_OUTPUTS)
+        self.nn_layer = np.array([NUM_INPUTS, 10, NUM_OUTPUTS])
         self.nn = NeuralNetwork(self.nn_layer)
 
         # Game related
         self.game_map = game.update_map()
-        print("Initialized")
+        logging.info("Initialized")
 
     def play(self):
-        print("Started playing")
+        logging.info("Started playing")
         while True:
             self.game_map = game.update_map()
             start_time = time.time()

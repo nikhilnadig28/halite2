@@ -12,15 +12,15 @@ y = y/100  # max test score is 100
 
 class NeuralNetwork(object):
 
-    def __init__(self, layer):
+    def __init__(self, nn_layer):
         # parameters
-        self.inputSize = layer[0]
-        self.outputSize = layer[1]
-        self.hiddenSize = layer[3]
+        self.inputSize = nn_layer[0]
+        self.outputSize = nn_layer[1]
+        self.hiddenSize = nn_layer[2]
 
         # weights
-        self.W1 = np.random.randn(self.inputSize, self.hiddenSize) # (3x2) weight matrix from input to hidden layer
-        self.W2 = np.random.randn(self.hiddenSize, self.outputSize) # (3x1) weight matrix from hidden to output layer
+        self.W1 = np.random.randn(self.inputSize, self.hiddenSize)  # (3x2) weight matrix from input to hidden layer
+        self.W2 = np.random.randn(self.hiddenSize, self.outputSize)  # (3x1) weight matrix from hidden to output layer
 
     def forward(self, X):
         # forward propagation through our network
