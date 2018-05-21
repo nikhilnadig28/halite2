@@ -11,8 +11,8 @@ class ShipState:
         self.map_features = game_features
         self.ship = ship
         self.team_id = self.game_map.get_me().id
-        self.nearby_entities = np.array()
-        self.values = np.array()
+        self.nearby_entities = np.array([])
+        self.values = np.array([])
 
     #### Ship related functions ####
 
