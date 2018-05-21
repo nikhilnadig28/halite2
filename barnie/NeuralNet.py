@@ -1,5 +1,5 @@
 import numpy as np
-from .Common import *
+from Common import *
 
 # Input data for test
 X = np.array(([2, 9], [1, 5], [3, 6]), dtype=float)
@@ -53,10 +53,10 @@ class NeuralNetwork(object):
         o = self.forward(X)
         self.backward(X, y, o)
 
-  def crossover(self, weight_one, weight_two, split_index):
-    first_part = np.split(weight_one, [split_index + 1, len(weight_one)])
-    last_part = np.split(weight_two, [split_index + 1, len(weight_two)])
-    return np.concatenate([first_part[0], last_part[1]])
+    def crossover(self, weight_one, weight_two, split_index):
+        first_part = np.split(weight_one, [split_index + 1, len(weight_one)])
+        last_part = np.split(weight_two, [split_index + 1, len(weight_two)])
+        return np.concatenate([first_part[0], last_part[1]])
 
     def set_weights(self, weights):
         pass

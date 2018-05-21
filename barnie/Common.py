@@ -1,5 +1,5 @@
 import numpy as np
-from .Strategy import *
+from Strategy import *
 
 
 def pad_distances(distances):
@@ -12,7 +12,7 @@ def pad_distances(distances):
 def normalize(array):
     max_value = np.max(np.abs(array))
     if max_value is not 0:
-        return np.divide(array/max_value)
+        return np.divide(array, max_value)
     else:
         return None
 

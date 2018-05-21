@@ -3,10 +3,10 @@ import logging
 import os
 import numpy as np
 from scipy import stats
-from .GameState import GameState
-from .ShipState import ShipState
-from .NeuralNet import NeuralNetwork
-from .Strategy import *
+from GameState import GameState
+from ShipState import ShipState
+from NeuralNet import NeuralNetwork
+from Strategy import *
 
 VERSION = 1
 
@@ -16,9 +16,9 @@ logging.info("Starting Barnie!")
 
 
 class Bot:
-    def _init_(self, name):
+    def _init_(self):
         current_directory = os.path.dirname(os.path.abspath(__file__))
-        self._name = name
+        #self._name = name
 
         # Neural Network
         self.nn_layer = np.array(NUM_INPUTS, 10, NUM_OUTPUTS)
@@ -26,8 +26,10 @@ class Bot:
 
         # Game related
         self.game_map = game.update_map()
+        print("Initialized")
 
     def play(self):
+        print("Started playing")
         while True:
             self.game_map = game.update_map()
             commands = []

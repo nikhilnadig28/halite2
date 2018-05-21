@@ -1,7 +1,7 @@
 import hlt
 import numpy as np
 from collections import OrderedDict
-from .Common import *
+from Common import *
 
 
 
