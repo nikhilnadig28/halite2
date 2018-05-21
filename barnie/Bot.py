@@ -1,6 +1,7 @@
 import hlt
 import logging
 import os
+import time
 import numpy as np
 from scipy import stats
 from GameState import GameState
@@ -32,6 +33,7 @@ class Bot:
         print("Started playing")
         while True:
             self.game_map = game.update_map()
+            start_time = time.time()
             commands = []
             game_state = GameState(self.game_map)
 
@@ -61,6 +63,8 @@ class Bot:
                 with open("c{}_out.vec".format(VERSION), "a") as f:
                     f.write(str(nn_out))
                     f.write('\n')
+
+            game.send_command_queue(commands)
 
     def ship_command(self, ship, ship_state, action):
         new_command = []
