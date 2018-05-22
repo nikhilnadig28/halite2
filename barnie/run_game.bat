@@ -1,1 +1,2 @@
-halite.exe -d "240 160" "python MyBot.py" "python noobfx/noobfx.py"
+del *.log
+halite.exe -d "360 240" "python MyBot.py" "python MyBot.py"

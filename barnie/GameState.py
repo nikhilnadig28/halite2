@@ -6,7 +6,7 @@ import numpy as np
 class GameState:
     def __init__(self, game_map):
         self.game_map = game_map
-        self.values = np.array([])
+        self.values = np.array([0, 0])
         self.update_values()
 
     #### Map related functions ###
@@ -26,8 +26,8 @@ class GameState:
     def update_values(self):
         logging.info('Number of enemy ships' + str(self.get_enemy_ships_count()))
         logging.info('Number of friendly ships' + str(self.get_enemy_ships_count()))
-        self.values = np.array([self.get_friendly_ships_count(),
-                               self.get_enemy_ships_count()])
+        self.values[0] = self.get_friendly_ships_count()
+        self.values[1] = self.get_enemy_ships_count()
 
 
 

@@ -11,8 +11,10 @@ class ShipState:
         self.map_features = game_features
         self.ship = ship
         self.team_id = self.game_map.get_me().id
-        self.nearby_entities = np.array([])
-        self.values = np.array([])
+        self.nearby_entities = self.game_map.nearby_entities_by_distance(ship)
+        self.nearby_entities = OrderedDict(sorted(self.nearby_entities.items(), key=lambda t: t[0]))
+        self.values = np.zeros(5)
+        self.update_values()
 
     #### Ship related functions ####
 
@@ -79,11 +81,8 @@ class ShipState:
         return closest_available_planet
 
     def update_values(self):
-        self.nearby_entities = self.game_map.nearby_nearby_entities()
-        self.nearby_entities = OrderedDict(sorted(self.nearby_entities.items(), key=lambda t: t[0]))
-
-        self.values = np.array(self.get_empty_planet_distances(),
+        self.values = np.array([self.get_empty_planet_distances(),
                                self.get_team_planet_distances(),
                                self.get_enemy_planet_distances(),
                                self.get_team_ship_distances(),
-                               self.get_enemy_ship_distances())
+                               self.get_enemy_ship_distances()])
