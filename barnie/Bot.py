@@ -29,6 +29,7 @@ class Bot:
             
         # logging.info(self.val)
 
+
         # Neural Network
         self.nn_layer = np.array([NUM_INPUTS, 10, NUM_OUTPUTS])
         self.nn = NeuralNetwork(self.nn_layer)
