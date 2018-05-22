@@ -29,26 +29,18 @@ class Bot:
         logging.info("Started playing")
         while True:
             start_time = time.time()
-            logging.info("im here0")
             game_map = game.update_map()
-            logging.info("im here1")
-            start_time = time.time()
             commands = []
             game_state = GameState(game_map)
-            logging.info("im here2")
 
             for ship in game_map.get_me().all_ships():
                 if ship.docking_status is not ship.DockingStatus.UNDOCKED:
                     continue
 
                 ship_state = ShipState(game_map, game_state, ship)
-                logging.info("Length of game_state" + str(len(game_state.values)))
-                logging.info("Length of ship_state" + str(len(ship_state.values)))
                 nn_input = np.append(game_state.values, ship_state.values)
-                logging.info("Length of nn_input" + str(len(nn_input)))
-                logging.info(nn_input)
                 nn_out = self.nn.forward(nn_input)
-                logging.info("im here3")
+                logging.info("Length of nn_out is " + str(len(nn_out)))
 
                 # Obtain an action
                 #possible_actions = np.arange(3)
@@ -56,6 +48,7 @@ class Bot:
                 #action = probabilities.rvs(size=1)
 
                 action = np.argmax(nn_out)
+                logging.info("Action = " + str(action))
 
                 commands.append(self.ship_command(game_map, ship, ship_state, action))
 
@@ -97,4 +90,5 @@ class Bot:
         elif action is 2:
             pass
 
+        #logging.info("Ship " + str(ship.id) + " does action " + str(action))
         return new_command
