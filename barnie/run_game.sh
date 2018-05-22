@@ -1,3 +1,7 @@
 #!/bin/sh
+rm -rf *.log
+rm -rf *.hlt
 
-./halite -d "240 160" "python3 MyBot.py" "python3 MyBot.py"
+rm -rf *.results
+
+./halite -d "240 160" "python3 MyBot.py" "python3 MyBot.py" "python3 MyBot.py" "python3 MyBot.py" >> match.results

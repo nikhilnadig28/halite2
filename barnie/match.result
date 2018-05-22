@@ -1,9 +1,0 @@
-Game constants: all default
-Seed: 1991224741 Dimensions: 360x240
-Init Message sent to player 0.
-Init Message sent to player 1.
-Player 0 is dead
-Player 1 is dead
-Skipping replay (bot errored on first turn).
-Player #0, Bot #0; timed out during Init, came in rank #2 and was last alive on frame #-1, producing 0 ships and dealing 0 damage!
-Player #1, Bot #1; timed out during Init, came in rank #1 and was last alive on frame #-1, producing 0 ships and dealing 0 damage!

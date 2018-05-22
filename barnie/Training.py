@@ -4,10 +4,10 @@ import time
 ship_requirement = 10
 damage_requirement = 1000
 
-bot_1 = '"MyBot1.py" ' #enter the bot1 file name. Maintain the format. 
-bot_2 = '"MyBot2.py" ' #enter the bot2 file name. Maintain the format. 
-bot_3 = '"MyBot3.py" ' #enter the bot3 file name. Maintain the format. 
-bot_4 = '"MyBot4.py"'  #enter the bot4 file name. Maintain the format. 
+bot_1 = '"python3 MyBot.py" ' #enter the bot1 file name. Maintain the format. 
+bot_2 = '"python3 MyBot.py" ' #enter the bot2 file name. Maintain the format. 
+bot_3 = '"python3 MyBot.py" ' #enter the bot3 file name. Maintain the format. 
+bot_4 = '"python3 MyBot.py"'  #enter the bot4 file name. Maintain the format. 
 
 
 def get_ships(data):
@@ -36,21 +36,23 @@ for num in range(5000):
             p4_pct = round(player_4_wins/(total_wins)*100.0, 2)
             print("Player 1 win: {}%; Player 2 win: {}%.".format(p1_pct, p2_pct))
 
-        cmd = 'halite.exe -d "360 240" ' + bot_1 + bot_2 + bot_3 + bot_4 + ' >> match.results'
+        cmd = './halite -d "240 160" ' + bot_1 + bot_2 + bot_3 + bot_4 + ' >> match.results'
+        #print(cmd)
         os.system(cmd)
 
         with open('match.results', 'r') as f:
             contents = f.readlines()
-            bot_log_1 = contents[-8]
-            bot_log_2 = contents[-7]
-            bot_log_3 = contents[-6]
-            bot_log_4 = contents[-5]
+
+            bot_log_1 = contents[-4]
+            bot_log_2 = contents[-3]
+            bot_log_3 = contents[-2]
+            bot_log_4 = contents[-1]
             
             #Uncomment if you need to see the original format of logs
-            #print(bot_log_1)
-            #print(bot_log_2)
-            #print(bot_log_3)
-            #print(bot_log_4)
+            print(bot_log_1)
+            print(bot_log_2)
+            print(bot_log_3)
+            print(bot_log_4)
 
             bot_ships_1 = get_ships(bot_log_1)
             bot_dmg_1 = get_damage(bot_log_1)
@@ -140,4 +142,4 @@ for num in range(5000):
         time.sleep(2)
     except Exception as e:
         print(str(e))
-        time.sleep(1)
+        time.sleep(2)

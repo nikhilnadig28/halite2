@@ -30,6 +30,7 @@ class Bot:
         while True:
             start_time = time.time()
             game_map = game.update_map()
+            logging.info("Reading game_map")
             commands = []
             game_state = GameState(game_map)
 
@@ -52,7 +53,7 @@ class Bot:
 
                 commands.append(self.ship_command(game_map, ship, ship_state, action))
 
-                game.send_command_queue(commands)
+                #game.send_command_queue(commands)
 
                 with open("input.vec".format(VERSION), "a") as f:
                     f.write(str([round(item, 3) for item in nn_input]))
