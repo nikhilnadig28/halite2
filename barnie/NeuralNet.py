@@ -19,15 +19,25 @@ class NeuralNetwork(object):
         output_size = nn_layer[1]
         hidden_size = nn_layer[2]
 
+        logging.info(input_size)
+        logging.info(output_size)
+        logging.info(hidden_size)
+
+
         # weights
         self.W1 = np.random.randn(input_size, hidden_size)  # (17x10) weight matrix from input to hidden layer
         self.W2 = np.random.randn(hidden_size, output_size)  # (10x3) weight matrix from hidden to output layer
 
     def forward(self, _X):
         # forward propagation through our network
+        logging.info(_X.shape)
         z = np.dot(_X, self.W1)  # dot product of X (input) and first set of 3x2 weights
+        logging.info(z.shape)
         self.z2 = self.sigmoid(z)  # activation function
+        logging.info(self.z2.shape)
+
         z3 = np.dot(self.z2, self.W2)  # dot product of hidden layer (z2) and second set of 3x1 weights
+        logging.info(z3.shape)
         o = sigmoid(z3)  # final activation function
         return o
 
