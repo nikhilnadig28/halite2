@@ -17,9 +17,17 @@ logging.info("Starting Barnie!")
 
 
 class Bot:
-    def __init__(self):
+    def __init__(self, name):
         current_directory = os.path.dirname(os.path.abspath(__file__))
-        #self._name = name
+        self._name = name
+        logging.info(str("Iteration :   ") + self._name)
+        # with open("counter.dat", "a+") as f:
+        #     self.val = int(f.read() or 0) + 1
+        #     f.seek(0)
+        #     f.truncate()
+        #     f.write(str(self.val))
+            
+        # logging.info(self.val)
 
         # Neural Network
         self.nn_layer = np.array([NUM_INPUTS, 10, NUM_OUTPUTS])
@@ -27,6 +35,10 @@ class Bot:
 
     def play(self):
         logging.info("Started playing")
+        with open("weight{}.vec".format(self._name), "a") as f:
+            f.write(str(self.nn.W1) + str(self.nn.W2))
+            f.write('\n')
+
         while True:
             start_time = time.time()
             game_map = game.update_map()
@@ -59,10 +71,10 @@ class Bot:
                     f.write(str([round(item, 3) for item in nn_input]))
                     f.write('\n')
 
-                with open("c{}_out.vec".format(VERSION), "a") as f:
+                with open("nn_output{}.vec".format(self._name), "a") as f:
                     f.write(str(nn_out))
                     f.write('\n')
-
+    
             game.send_command_queue(commands)
 
     def ship_command(self, game_map, ship, ship_state, action):
