@@ -5,8 +5,6 @@ ship_requirement = 10
 damage_requirement = 1000
 
 
-
-
 def get_ships(data):
     return int(data.split("producing ")[1].split(" ships")[0])
 

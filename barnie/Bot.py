@@ -53,7 +53,6 @@ class Bot:
                 ship_state = ShipState(game_map, game_state, ship)
                 nn_input = np.append(game_state.values, ship_state.values)
                 nn_out = self.nn.forward(nn_input)
-                logging.info("Length of nn_out is " + str(len(nn_out)))
 
                 # Obtain an action
                 #possible_actions = np.arange(3)
@@ -74,11 +73,12 @@ class Bot:
                 with open("nn_output{}.vec".format(self._name), "a") as f:
                     f.write(str(nn_out))
                     f.write('\n')
-    
+
             game.send_command_queue(commands)
 
     def ship_command(self, game_map, ship, ship_state, action):
         new_command = ''
+        action = 1
         if action is 0:
             '''Attack closest enemy ship'''
             target = ship_state.get_closest_enemy_ship()
@@ -89,8 +89,9 @@ class Bot:
         elif action is 1:
             '''Dock and mine closest owned/neutral planet'''
             target = ship_state.get_closest_available_planet()
-            if target.isFull():
+            if target.is_full():
                 # Go attack if the planet is full
+                logging.info('Target planets full, attack instead')
                 self.ship_command(ship, ship_state, 0)
             else:
                 if ship.can_dock(target):
