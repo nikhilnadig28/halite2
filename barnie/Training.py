@@ -29,7 +29,7 @@ for num in range(1000):
             p2_pct = round(player_2_wins/(total_wins)*100.0, 2)
             p3_pct = round(player_3_wins/(total_wins)*100.0, 2)
             p4_pct = round(player_4_wins/(total_wins)*100.0, 2)
-            print("Player 1 win: {}%; Player 2 win: {}%.".format(p1_pct, p2_pct))
+            print("Player 1 win: {}%; Player 2 win: {}%;Player 3 win: {}%;Player 4 win: {}%.".format(p1_pct, p2_pct, p3_pct, p4_pct))
 
 
         bot_1 = '"python3 MyBot.py -name='+str(num)+'1" ' #enter the bot1 file name. Maintain the format. 
