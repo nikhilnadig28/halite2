@@ -116,16 +116,21 @@ for gen in range(generations):
             
             printStatistics(num)
 
+            population1 = ' '.join(map(str, population_weights[4 * num]))
+            population2 = ' '.join(map(str, population_weights[4 * num + 1]))
+            population3 = ' '.join(map(str, population_weights[4 * num + 2]))
+            population4 = ' '.join(map(str, population_weights[4 * num + 3]))
 
-            bot_1 = '"python3 MyBot.py -name='+str(num)+'1 --weights='+ str(population_weights[4 * num]) +'" ' #enter the bot1 file name. Maintain the format.
+            bot_1 = '"python3 MyBot.py -name='+str(num)+'1 -w='+ population1 +'" ' #enter the bot1 file name. Maintain the format.
 
-            bot_2 = '"python3 MyBot.py -name='+str(num)+'2 --weights='+ str(population_weights[4 * num + 1]) +'" ' #enter the bot2 file name. Maintain the format.
-            bot_3 = '"python3 MyBot.py -name='+str(num)+'3 --weights='+ str(population_weights[4 * num + 2]) +'" ' #enter the bot3 file name. Maintain the format.
-            bot_4 = '"python3 MyBot.py -name='+str(num)+'4 --weights='+ str(population_weights[4 * num + 3]) +'"'  #enter the bot4 file name. Maintain the format.
+            bot_2 = '"python3 MyBot.py -name='+str(num)+'2 -w='+ population2 +'" ' #enter the bot2 file name. Maintain the format.
+            bot_3 = '"python3 MyBot.py -name='+str(num)+'3 -w='+ population3 +'" ' #enter the bot3 file name. Maintain the format.
+            bot_4 = '"python3 MyBot.py -name='+str(num)+'4 -w='+ population4 +'"'  #enter the bot4 file name. Maintain the format.
 
             cmd = './halite -d "240 160" ' + bot_1 + bot_2 + bot_3 + bot_4 + ' >> match.results'
 
             os.system(cmd)
+            print(cmd)
 
             with open('match.results', 'r') as f:
                 contents = f.readlines()
