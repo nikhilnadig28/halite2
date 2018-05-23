@@ -32,7 +32,7 @@ class Bot:
         #     f.truncate()
         #     f.write(str(self.val))
             
-        # logging.info(self.val)
+        logging.info(self.nn_weights)
 
 
         # Neural Network
