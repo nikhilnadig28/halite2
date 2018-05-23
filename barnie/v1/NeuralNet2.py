@@ -13,6 +13,7 @@ class NeuralNetwork(object):
         self.hidden_size = nn_layer[1]
         self.output_size = nn_layer[2]
 
+
         # weights
         self.weights = weights
         self.W1 = self.weights[:nn_layer[0]*nn_layer[1]].reshape([nn_layer[0], nn_layer[1]])

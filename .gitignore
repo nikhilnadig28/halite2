@@ -38,3 +38,5 @@ mlbot/hlt/__pycache__/__init__.cpython-35.pyc
 *.weights
 
 *.output
+barnie/v1/__pycache__/NeuralNet2.cpython-35.pyc
+barnie/v1/__pycache__/Bot.cpython-35.pyc

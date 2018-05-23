@@ -21,7 +21,7 @@ class Bot:
     def __init__(self, name, nn_weights=None):
         # current_directory = os.path.dirname(os.path.abspath(__file__))
         self.nn_weights = 2*np.random.rand(200)-1
-        if nn_weights:
+        if nn_weights is not None:
             self.nn_weights = nn_weights
 
         self._name = name
@@ -33,13 +33,11 @@ class Bot:
         #     f.seek(0)
         #     f.truncate()
         #     f.write(str(self.val))
-            
-        logging.info(self.nn_weights)
-
 
         # Neural Network
         self.nn_layer = np.array([NUM_INPUTS, 10, NUM_OUTPUTS])
         self.nn = NeuralNetwork(self.nn_layer, self.nn_weights)
+
 
     def play(self):
         logging.info("Started playing")
