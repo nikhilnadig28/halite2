@@ -192,9 +192,9 @@ for gen in range(generations):
                 
                 #Logging Data
                 with open("winner.details","a") as f:
-                for l in printingData:
-                    f.write(l)
-                    f.write('\n')
+                    for l in printingData:
+                        f.write(l)
+                        f.write('\n')
 
 
             if bot_rank_1 == 1:
