@@ -19,11 +19,14 @@ with open(filename,"r") as f:
     winner_combined_weights = input_lines[0]
     # print(input_lines)
 
-winner_combined_weights_list = re.split("\!\!",winner_combined_weights) #Each win's weights seperated as list.
+# winner_combined_weights_list = re.split("\!\!",winner_combined_weights) #Each win's weights seperated as list.
 
 # print(winner_combined_weights_list)
-numpyarray = np.array(winner_combined_weights)
-print(numpyarray.size)
+for item in input_lines:
+	numpyarray = np.array(item)
+	print(numpyarray)
+
+
 # data = [x for x in data if x] #Removes empty lists
 
 # data2 = data[0]

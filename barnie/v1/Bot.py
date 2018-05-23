@@ -25,6 +25,8 @@ class Bot:
             self.nn_weights = nn_weights
 
         self._name = name
+
+
         logging.info(str("Iteration :   ") + self._name)
         # with open("counter.dat", "a+") as f:
         #     self.val = int(f.read() or 0) + 1
@@ -41,8 +43,10 @@ class Bot:
 
     def play(self):
         logging.info("Started playing")
+
         with open("weight{}.vec".format(self._name), "a") as f:
-            f.write(str(self.nn.W1) +"!!"+ str(self.nn.W2))
+
+            f.write(str(self.nn.W1) + str(self.nn.W2))
             f.write('\n')
 
         while True:
