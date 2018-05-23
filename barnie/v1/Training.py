@@ -168,10 +168,33 @@ for gen in range(generations):
                 bot_dmg_4 = get_damage(bot_log_4)
                 bot_rank_4 = get_rank(bot_log_4)
 
-                print("Bot 1 rank: {} ships: {} dmg: {}".format(bot_rank_1,bot_ships_1,bot_dmg_1))
-                print("Bot 2 rank: {} ships: {} dmg: {}".format(bot_rank_2,bot_ships_2,bot_dmg_2))
-                print("Bot 3 rank: {} ships: {} dmg: {}".format(bot_rank_3,bot_ships_3,bot_dmg_3))
-                print("Bot 4 rank: {} ships: {} dmg: {}".format(bot_rank_4,bot_ships_4,bot_dmg_4))
+                printingData = []
+                
+                data = "Generation: "+str(gen + 1)
+                printingData.append(data)
+                print(data)
+
+                data = "Bot 1 rank: {} ships: {} dmg: {}".format(bot_rank_1,bot_ships_1,bot_dmg_1)
+                printingData.append(data)
+                print(data)
+                
+                data = "Bot 2 rank: {} ships: {} dmg: {}".format(bot_rank_2,bot_ships_2,bot_dmg_2)
+                printingData.append(data)
+                print(data)
+
+                data = "Bot 3 rank: {} ships: {} dmg: {}".format(bot_rank_3,bot_ships_3,bot_dmg_3)
+                printingData.append(data)
+                print(data)
+                
+                data = "Bot 4 rank: {} ships: {} dmg: {}".format(bot_rank_4,bot_ships_4,bot_dmg_4)
+                printingData.append(data)
+                print(data)
+                
+                #Logging Data
+                with open("winner.details","a") as f:
+                for l in printingData:
+                    f.write(l)
+                    f.write('\n')
 
 
             if bot_rank_1 == 1:
