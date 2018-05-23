@@ -1,9 +1,9 @@
 import numpy as np
 import logging
-from sklearn.neural_network import MLPClassifier
-X = [[0., 0.], [1., 1.]]
-y = [0, 1]
-clf = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(5, 2), random_state=1)
+#from sklearn.neural_network import MLPClassifier
+#X = [[0., 0.], [1., 1.]]
+#y = [0, 1]
+#clf = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(5, 2), random_state=1)
 from Common import *
 
 # Input data for test
@@ -17,15 +17,16 @@ y = y/100  # max test score is 100
 
 class NeuralNetwork(object):
 
-    def __init__(self, nn_layer):
+    def __init__(self, nn_layer, weights):
         # parameters
-        input_size = nn_layer[0]
-        hidden_size = nn_layer[1]
-        output_size = nn_layer[2]
+        self.input_size = nn_layer[0]
+        self.hidden_size = nn_layer[1]
+        self.output_size = nn_layer[2]
 
         # weights
-        self.W1 = np.random.randn(input_size, hidden_size)  # (17x10) weight matrix from input to hidden layer
-        self.W2 = np.random.randn(hidden_size, output_size)  # (10x3) weight matrix from hidden to output layer
+        self.weights = weights
+        self.W1 = self.weights[:nn_layer[0] * nn_layer[1]].reshape([nn_layer[0], nn_layer[1]])
+        self.W2 = self.weights[nn_layer[1] * nn_layer[2]:].reshape([nn_layer[1], nn_layer[2]])
 
     def forward(self, _X):
         # forward propagation through our network
@@ -64,6 +65,15 @@ class NeuralNetwork(object):
         last_part = np.split(weight_two, [split_index + 1, len(weight_two)])
         return np.concatenate([first_part[0], last_part[1]])
 
+    def cross(self, nn2, split_index):
+        first_part = np.split(self.weights, [split_index + 1, len(self.weights)])
+        last_part = np.split(nn2.weights, [split_index + 1, len(nn2.weights)])
+        new_weights = np.concatenate([first_part[0], last_part[1]])
+        NN.weights[:layer[0] * layer[1]].reshape([2, 3])
+        NN.weights[layer[1] * layer[2]:].reshape([3, 2])
+
+        return np.concatenate([first_part[0], last_part[1]])
+
     def set_weights(self, weights):
         pass
 
@@ -71,18 +81,14 @@ class NeuralNetwork(object):
         pass
 
 
-
-#For Testing
-if __name__ == 'main':
-    layer = np.array([2,3,2])
+# For Testing
+if __name__ == '__main__':
+    print("done")
+    layer = np.array([2, 3, 2])
     NN = NeuralNetwork(layer)
-    for i in range(1000): # trains the NN 1,000 times
-        pred_output = NN.forward(X)
-        loss = np.mean(np.square(y - NN.forward(X)))
-        if (i%100) == 0:
-            print("Input: \n" + str(X))
-            print("Actual Output: \n" + str(y))
-            print("Predicted Output: \n" + str(pred_output))
-            print("Loss: \n" + str(loss)) # mean sum squared loss
-            print("\n")
-        NN.train(X, y)
+
+    print(NN.weights)
+    print(NN.W1)
+    print(NN.W2)
+    print(NN.weights[:layer[0] * layer[1]].reshape([2, 3]))
+    print(NN.weights[layer[1] * layer[2]:].reshape([3, 2]))

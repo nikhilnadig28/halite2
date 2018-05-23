@@ -69,7 +69,7 @@ class NeuralNetwork(object):
 
 
 #For Testing
-if __name__ == 'main':
+if __name__ == '__main__':
     layer = np.array([2,3,2])
     NN = NeuralNetwork(layer)
     for i in range(1000): # trains the NN 1,000 times
