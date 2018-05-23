@@ -53,6 +53,7 @@ class Bot:
 
                 ship_state = ShipState(game_map, game_state, ship)
                 nn_input = np.append(game_state.values, ship_state.values)
+                #logging.info(str(nn_input))
                 nn_out = self.nn.forward(nn_input)
 
                 # Obtain an action
@@ -63,7 +64,9 @@ class Bot:
                 action = np.argmax(nn_out)
                 logging.info("Action = " + str(action))
 
-                commands.append(self.ship_command(game_map, ship, ship_state, action))
+                new_command = self.ship_command(game_map, ship, ship_state, action)
+                if new_command:
+                    commands.append(new_command)
 
                 #game.send_command_queue(commands)
 
@@ -74,36 +77,31 @@ class Bot:
                 with open("nn_output{}.vec".format(self._name), "a") as f:
                     f.write(str(nn_out))
                     f.write('\n')
-
             game.send_command_queue(commands)
 
     def ship_command(self, game_map, ship, ship_state, action):
         new_command = ''
-        action = 1
         if action is 0:
             '''Attack closest enemy ship'''
             target = ship_state.get_closest_enemy_ship()
             new_command = ship.navigate(
                 ship.closest_point_to(target),
-                game_map, speed=int(hlt.constants.MAX_SPEED), ignore_ships=False)
+                game_map, speed=int(hlt.constants.MAX_SPEED/1.5), ignore_ships=False)
 
-        elif action is 1:
+        elif action is 1 or 2:
             '''Dock and mine closest owned/neutral planet'''
             target = ship_state.get_closest_available_planet()
             if target.is_full():
                 # Go attack if the planet is full
-                logging.info('Target planets full, attack instead')
-                self.ship_command(ship, ship_state, 0)
-            else:
+                new_command = self.ship_command(game_map, ship, ship_state, 0)
+            elif ship.docking_status is ship.DockingStatus.UNDOCKED:
                 if ship.can_dock(target):
                     new_command = ship.dock(target)
                 else:
                     new_command = ship.navigate(
                         ship.closest_point_to(target),
-                        game_map, speed=int(hlt.constants.MAX_SPEED), ignore_ships=False)
+                        game_map, speed=int(hlt.constants.MAX_SPEED/1.5), ignore_ships=False)
 
-        elif action is 2:
-            pass
 
         #logging.info("Ship " + str(ship.id) + " does action " + str(action))
         return new_command

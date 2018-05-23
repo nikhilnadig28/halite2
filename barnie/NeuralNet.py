@@ -1,6 +1,7 @@
 import numpy as np
 import logging
 from Common import *
+import time
 
 # Input data for test
 X = np.array(([2, 9], [1, 5], [3, 6]), dtype=float)
@@ -34,6 +35,10 @@ class NeuralNetwork(object):
 
     def sigmoid(self, s):
         # activation function
+        capping_indices = s > 100
+        s[capping_indices] = 100
+        capping_indices = s < -100
+        s[capping_indices] = -100
         return 1/(1+np.exp(-s))
 
     def sigmoidPrime(self, s):

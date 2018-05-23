@@ -24,8 +24,8 @@ class GameState:
         pass
 
     def update_values(self):
-        logging.info('Number of enemy ships' + str(self.get_enemy_ships_count()))
-        logging.info('Number of friendly ships' + str(self.get_enemy_ships_count()))
+        #logging.info('Number of enemy ships' + str(self.get_enemy_ships_count()))
+        #logging.info('Number of friendly ships' + str(self.get_enemy_ships_count()))
         self.values[0] = self.get_friendly_ships_count()
         self.values[1] = self.get_enemy_ships_count()
 

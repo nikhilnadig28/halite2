@@ -19,6 +19,7 @@ class NeuralNetwork(object):
 
     def __init__(self, nn_layer, weights):
         # parameters
+        self.layer = nn_layer
         self.input_size = nn_layer[0]
         self.hidden_size = nn_layer[1]
         self.output_size = nn_layer[2]
@@ -65,14 +66,14 @@ class NeuralNetwork(object):
         last_part = np.split(weight_two, [split_index + 1, len(weight_two)])
         return np.concatenate([first_part[0], last_part[1]])
 
-    def cross(self, nn2, split_index):
+    def cross(self, nn2, split_index=None):
+        if not split_index:
+            split_index = random.randint(0, len(self.weights))
         first_part = np.split(self.weights, [split_index + 1, len(self.weights)])
         last_part = np.split(nn2.weights, [split_index + 1, len(nn2.weights)])
         new_weights = np.concatenate([first_part[0], last_part[1]])
-        NN.weights[:layer[0] * layer[1]].reshape([2, 3])
-        NN.weights[layer[1] * layer[2]:].reshape([3, 2])
-
-        return np.concatenate([first_part[0], last_part[1]])
+        new_nn = NeuralNetwork(self.layer, new_weights)
+        return new_nn
 
     def set_weights(self, weights):
         pass
