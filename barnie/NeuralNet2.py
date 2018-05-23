@@ -1,9 +1,6 @@
 import numpy as np
 import logging
-#from sklearn.neural_network import MLPClassifier
-#X = [[0., 0.], [1., 1.]]
-#y = [0, 1]
-#clf = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(5, 2), random_state=1)
+import random
 from Common import *
 
 # Input data for test
@@ -40,6 +37,10 @@ class NeuralNetwork(object):
 
     def sigmoid(self, s):
         # activation function
+        capping_indices = s > 100
+        s[capping_indices] = 100
+        capping_indices = s < -100
+        s[capping_indices] = -100
         return 1/(1+np.exp(-s))
 
     def sigmoidPrime(self, s):
@@ -61,25 +62,14 @@ class NeuralNetwork(object):
         o = self.forward(_X)
         self.backward(_X, _y, o)
 
-    def crossover(self, weight_one, weight_two, split_index):
-        first_part = np.split(weight_one, [split_index + 1, len(weight_one)])
-        last_part = np.split(weight_two, [split_index + 1, len(weight_two)])
-        return np.concatenate([first_part[0], last_part[1]])
-
     def cross(self, nn2, split_index=None):
         if not split_index:
-            split_index = random.randint(0, len(self.weights))
+            split_index = random.randint(0, len(self.weights)-1)
         first_part = np.split(self.weights, [split_index + 1, len(self.weights)])
         last_part = np.split(nn2.weights, [split_index + 1, len(nn2.weights)])
         new_weights = np.concatenate([first_part[0], last_part[1]])
         new_nn = NeuralNetwork(self.layer, new_weights)
         return new_nn
-
-    def set_weights(self, weights):
-        pass
-
-    def normalize_output(self, out):
-        pass
 
 
 # For Testing

@@ -4,6 +4,7 @@ import os
 import time
 import numpy as np
 from scipy import stats
+import random
 from GameState import GameState
 from ShipState import ShipState
 from NeuralNet import NeuralNetwork
@@ -17,8 +18,12 @@ logging.info("Starting Barnie!")
 
 
 class Bot:
-    def __init__(self, name):
+    def __init__(self, name, nn_weights=None):
         current_directory = os.path.dirname(os.path.abspath(__file__))
+        self.nn_weights =
+        if nn_weights:
+
+
         self._name = name
         logging.info(str("Iteration :   ") + self._name)
         # with open("counter.dat", "a+") as f:
