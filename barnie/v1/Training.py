@@ -121,11 +121,11 @@ for gen in range(generations):
             population3 = ' '.join(map(str, population_weights[4 * num + 2]))
             population4 = ' '.join(map(str, population_weights[4 * num + 3]))
 
-            bot_1 = '"python3 MyBot.py -name='+str(num)+'1 -w='+ population1 +'" ' #enter the bot1 file name. Maintain the format.
+            bot_1 = '"python3 MyBot.py -name='+str(num)+'1 -w '+ population1 +'" ' #enter the bot1 file name. Maintain the format.
 
-            bot_2 = '"python3 MyBot.py -name='+str(num)+'2 -w='+ population2 +'" ' #enter the bot2 file name. Maintain the format.
-            bot_3 = '"python3 MyBot.py -name='+str(num)+'3 -w='+ population3 +'" ' #enter the bot3 file name. Maintain the format.
-            bot_4 = '"python3 MyBot.py -name='+str(num)+'4 -w='+ population4 +'"'  #enter the bot4 file name. Maintain the format.
+            bot_2 = '"python3 MyBot.py -name='+str(num)+'2 -w '+ population2 +'" ' #enter the bot2 file name. Maintain the format.
+            bot_3 = '"python3 MyBot.py -name='+str(num)+'3 -w '+ population3 +'" ' #enter the bot3 file name. Maintain the format.
+            bot_4 = '"python3 MyBot.py -name='+str(num)+'4 -w '+ population4 +'"'  #enter the bot4 file name. Maintain the format.
 
             cmd = './halite -d "240 160" ' + bot_1 + bot_2 + bot_3 + bot_4 + ' >> match.results'
 
