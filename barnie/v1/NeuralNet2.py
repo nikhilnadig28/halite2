@@ -1,7 +1,7 @@
 import numpy as np
 import logging
 import random
-from Common import *
+from v1.Common import *
 
 
 class NeuralNetwork(object):

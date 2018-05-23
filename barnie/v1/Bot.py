@@ -5,10 +5,10 @@ import time
 import numpy as np
 from scipy import stats
 import random
-from GameState import GameState
-from ShipState import ShipState
-from NeuralNet2 import NeuralNetwork
-from Strategy import *
+from v1.GameState import GameState
+from v1.ShipState import ShipState
+from v1.NeuralNet2 import NeuralNetwork
+from v1.Strategy import *
 
 VERSION = 1
 

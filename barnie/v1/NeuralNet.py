@@ -1,6 +1,6 @@
 import numpy as np
 import logging
-from Common import *
+from v1.Common import *
 import time
 
 # Input data for test

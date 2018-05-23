@@ -4,8 +4,10 @@ import hlt
 import logging
 import sys
 import os
-from Bot import Bot
+import v1
+from v1.Bot import Bot
 import argparse
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-name', action="store", dest='name', default='0')

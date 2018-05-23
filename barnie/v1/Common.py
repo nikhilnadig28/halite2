@@ -1,5 +1,5 @@
 import numpy as np
-from Strategy import *
+from v1.Strategy import *
 
 
 def pad_distances(distances):
