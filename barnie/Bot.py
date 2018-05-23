@@ -7,7 +7,7 @@ from scipy import stats
 import random
 from GameState import GameState
 from ShipState import ShipState
-from NeuralNet import NeuralNetwork
+from NeuralNet2 import NeuralNetwork
 from Strategy import *
 
 VERSION = 1
@@ -19,10 +19,10 @@ logging.info("Starting Barnie!")
 
 class Bot:
     def __init__(self, name, nn_weights=None):
-        current_directory = os.path.dirname(os.path.abspath(__file__))
-        self.nn_weights =
+        # current_directory = os.path.dirname(os.path.abspath(__file__))
+        self.nn_weights = 2*np.random.rand(200)-1
         if nn_weights:
-
+            self.nn_weights = nn_weights
 
         self._name = name
         logging.info(str("Iteration :   ") + self._name)
@@ -37,7 +37,7 @@ class Bot:
 
         # Neural Network
         self.nn_layer = np.array([NUM_INPUTS, 10, NUM_OUTPUTS])
-        self.nn = NeuralNetwork(self.nn_layer)
+        self.nn = NeuralNetwork(self.nn_layer, self.nn_weights)
 
     def play(self):
         logging.info("Started playing")
@@ -60,11 +60,6 @@ class Bot:
                 nn_input = np.append(game_state.values, ship_state.values)
                 #logging.info(str(nn_input))
                 nn_out = self.nn.forward(nn_input)
-
-                # Obtain an action
-                #possible_actions = np.arange(3)
-                #probabilities = stats.rv_discrete(name='custom', values=(possible_actions, nn_out))
-                #action = probabilities.rvs(size=1)
 
                 action = np.argmax(nn_out)
                 logging.info("Action = " + str(action))
@@ -91,7 +86,7 @@ class Bot:
             target = ship_state.get_closest_enemy_ship()
             new_command = ship.navigate(
                 ship.closest_point_to(target),
-                game_map, speed=int(hlt.constants.MAX_SPEED/1.5), ignore_ships=False)
+                game_map, speed=int(hlt.constants.MAX_SPEED), ignore_ships=False)
 
         elif action is 1 or 2:
             '''Dock and mine closest owned/neutral planet'''
@@ -105,7 +100,7 @@ class Bot:
                 else:
                     new_command = ship.navigate(
                         ship.closest_point_to(target),
-                        game_map, speed=int(hlt.constants.MAX_SPEED/1.5), ignore_ships=False)
+                        game_map, speed=int(hlt.constants.MAX_SPEED), ignore_ships=False)
 
 
         #logging.info("Ship " + str(ship.id) + " does action " + str(action))

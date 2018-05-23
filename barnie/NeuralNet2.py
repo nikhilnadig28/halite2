@@ -3,14 +3,6 @@ import logging
 import random
 from Common import *
 
-# Input data for test
-X = np.array(([2, 9], [1, 5], [3, 6]), dtype=float)
-y = np.array(([88], [89], [78]), dtype=float)
-
-# scale units
-X = X/np.amax(X, axis=0)  # maximum of X array
-y = y/100  # max test score is 100
-
 
 class NeuralNetwork(object):
 
@@ -23,12 +15,12 @@ class NeuralNetwork(object):
 
         # weights
         self.weights = weights
-        self.W1 = self.weights[:nn_layer[0] * nn_layer[1]].reshape([nn_layer[0], nn_layer[1]])
-        self.W2 = self.weights[nn_layer[1] * nn_layer[2]:].reshape([nn_layer[1], nn_layer[2]])
+        self.W1 = self.weights[:nn_layer[0]*nn_layer[1]].reshape([nn_layer[0], nn_layer[1]])
+        self.W2 = self.weights[nn_layer[0]*nn_layer[1]:].reshape([nn_layer[1], nn_layer[2]])
 
-    def forward(self, _X):
+    def forward(self, X):
         # forward propagation through our network
-        z = np.dot(_X, self.W1)  # dot product of X (input) and first set of 3x2 weights
+        z = np.dot(X, self.W1)  # dot product of X (input) and first set of 3x2 weights
         self.z2 = self.sigmoid(z)  # activation function
 
         z3 = np.dot(self.z2, self.W2)  # dot product of hidden layer (z2) and second set of 3x1 weights
@@ -58,9 +50,9 @@ class NeuralNetwork(object):
         self.W1 += _X.T.dot(z2_delta)  # adjusting first set (input --> hidden) weights
         self.W2 += self.z2.T.dot(o_delta)  # adjusting second set (hidden --> output) weights
 
-    def train(self, _X, _y):
-        o = self.forward(_X)
-        self.backward(_X, _y, o)
+    def train(self, X, y):
+        o = self.forward(X)
+        self.backward(X, y, o)
 
     def cross(self, nn2, split_index=None):
         if not split_index:
