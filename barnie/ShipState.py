@@ -1,4 +1,5 @@
 import hlt
+import logging
 import numpy as np
 from collections import OrderedDict
 from Common import *
@@ -59,11 +60,11 @@ class ShipState:
 
     def get_closest_enemy_ship(self):
         min_dist = 99999
-        closest_enemy_ship = []
+        closest_enemy_ship = None
         for distance in self.nearby_entities:
-            if isinstance(self.nearby_entities[distance][0], hlt.entity.Ship) \
-                    and not (self.nearby_entities[distance][0].owner.id == self.team_id)\
-                    and min_dist > distance:
+            if isinstance(self.nearby_entities[distance][0], hlt.entity.Ship):
+                if self.nearby_entities[distance][0].owner.id is not self.team_id:
+                    if min_dist > distance:
                         closest_enemy_ship = self.nearby_entities[distance][0]
                         min_dist = distance
         return closest_enemy_ship
@@ -74,7 +75,7 @@ class ShipState:
         for distance in self.nearby_entities:
             if isinstance(self.nearby_entities[distance][0], hlt.entity.Planet):
                 if self.nearby_entities[distance][0].is_owned():
-                    if self.nearby_entities[distance][0].owner.id is not self.team_id:
+                    if self.nearby_entities[distance][0].owner.id is self.team_id:
                         if min_dist > distance:
                             closest_available_planet = self.nearby_entities[distance][0]
                             min_dist = distance
