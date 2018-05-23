@@ -37,7 +37,7 @@ class Bot:
     def play(self):
         logging.info("Started playing")
         with open("weight{}.vec".format(self._name), "a") as f:
-            f.write(str(self.nn.W1) + str(self.nn.W2))
+            f.write(str(self.nn.W1) +"!!"+ str(self.nn.W2))
             f.write('\n')
 
         while True:

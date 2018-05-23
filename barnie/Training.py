@@ -1,5 +1,6 @@
 import os
 import time
+import json
 
 ship_requirement = 10
 damage_requirement = 1000
@@ -32,10 +33,10 @@ for num in range(1000):
             print("Player 1 win: {}%; Player 2 win: {}%;Player 3 win: {}%;Player 4 win: {}%.".format(p1_pct, p2_pct, p3_pct, p4_pct))
 
 
-        bot_1 = '"python MyBot.py -name='+str(num)+'1" ' #enter the bot1 file name. Maintain the format.
-        bot_2 = '"python MyBot.py -name='+str(num)+'2" ' #enter the bot2 file name. Maintain the format.
-        bot_3 = '"python MyBot.py -name='+str(num)+'3" ' #enter the bot3 file name. Maintain the format.
-        bot_4 = '"python MyBot.py -name='+str(num)+'4"'  #enter the bot4 file name. Maintain the format.
+        bot_1 = '"python3 MyBot.py -name='+str(num)+'1" ' #enter the bot1 file name. Maintain the format.
+        bot_2 = '"python3 MyBot.py -name='+str(num)+'2" ' #enter the bot2 file name. Maintain the format.
+        bot_3 = '"python3 MyBot.py -name='+str(num)+'3" ' #enter the bot3 file name. Maintain the format.
+        bot_4 = '"python3 MyBot.py -name='+str(num)+'4"'  #enter the bot4 file name. Maintain the format.
 
         cmd = './halite -d "240 160" ' + bot_1 + bot_2 + bot_3 + bot_4 + ' >> match.results'
         #print(cmd)
@@ -86,9 +87,11 @@ for num in range(1000):
             with open(filename,"r") as f:
                 input_lines = f.readlines()
             with open("winner.weights","a") as f:
-                f.write(str(num)+'1 : ')
+                # f.write(str(num)+'1 : ')
                 for l in input_lines:
                     f.write(l)
+                f.write("$$")
+
 
             filename = "nn_output"+str(num)+"1.vec"
             with open(filename,"r") as f:
@@ -106,9 +109,11 @@ for num in range(1000):
             with open(filename,"r") as f:
                 input_lines = f.readlines()
             with open("winner.weights","a") as f:
-                f.write(str(num)+'2 : ')
+                # f.write(str(num)+'2 : ')
                 for l in input_lines:
                     f.write(l)
+                f.write("$$")
+
                 
             filename = "nn_output"+str(num)+"2.vec"
             with open(filename,"r") as f:
@@ -126,9 +131,11 @@ for num in range(1000):
             with open(filename,"r") as f:
                 input_lines = f.readlines()
             with open("winner.weights","a") as f:
-                f.write(str(num)+'3 : ')
+                # f.write(str(num)+'3 : ')
                 for l in input_lines:
                     f.write(l)
+                f.write("$$")
+
                 
             filename = "nn_output"+str(num)+"3.vec"
             with open(filename,"r") as f:
@@ -146,9 +153,10 @@ for num in range(1000):
             with open(filename,"r") as f:
                 input_lines = f.readlines()
             with open("winner.weights","a") as f:
-                f.write(str(num)+'4 : ')
+                # f.write(str(num)+'4 : ')
                 for l in input_lines:
                     f.write(l)
+                f.write("$$")
                 
             filename = "nn_output"+str(num)+"4.vec"
             with open(filename,"r") as f:
