@@ -12,7 +12,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('-name', action="store", dest='name', default='0')
 # parser.add_argument('-w', action="store", dest='weights', default='0')
-parser.add_argument('-w', '--weights', nargs='+', dest='weights', help='<Required> Set flag', default=None)
+parser.add_argument('-w', '--weights', nargs='+', type=float, dest='weights', help='<Required> Set flag', default=None)
 args = parser.parse_args()
 
 if args.weights:
