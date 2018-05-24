@@ -118,7 +118,7 @@ population_weights = np.around(np.random.random((100, 200)), 3)
 for gen in range(generations):
     winner_weights = []
 
-    for num in range(100):
+    for num in range(25):
         try:
             
             printStatistics(num)
